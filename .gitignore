@@ -1,0 +1,50 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Optional npm cache directory
+.npm/
+
+# Build outputs (optional if using TypeScript or build tools)
+dist/
+build/
+
+# IDE folders
+.vscode/
+.idea/
+
+# Debug folder for VSCode
+.vscode/
+
+# MongoDB database dumps
+dump/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Uploaded files (if using multer or similar)
+uploads/
