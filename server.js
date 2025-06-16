@@ -2,16 +2,14 @@ const http = require('http');
 const os = require('os');
 const app = require('./src/app');
 const connectDB = require('./src/config/db');
-const { connectRedis } = require('./src/config/redis');
+// const { connectRedis } = require('./src/config/redis');
 const connectSocket = require('./src/config/socket');
-
 
 
 const server = http.createServer(app);
 connectSocket(server);
 connectDB();
-connectRedis();
-
+// connectRedis();
 
 
 const port = 3000;
@@ -22,5 +20,5 @@ server.listen(port, () => {
         .flat()
         .filter((details) => details.family === "IPv4" && !details.internal)
         .map((details) => details.address)[0];
-    console.log(`✅ Backend running at: http://${localIp || "localhost"}:${port}`);
+    console.log('✅ Backend running');
 });
