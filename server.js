@@ -14,7 +14,7 @@ connectRedis();
 
 
 
-const port = 3000;
+const port = 5000;
 
 server.listen(port, () => {
     const networkInterfaces = os.networkInterfaces();
