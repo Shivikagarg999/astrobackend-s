@@ -1,70 +1,53 @@
-const mongoose = require('mongoose');
-
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true,
-  },
+    name: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    phone: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    image: {
+        type: String,
+        default: ""
+    },
     gender: {
-    type: String,
-  },
+        type: String,
+        enum: ["male", "female"],
+    },
+    dob: {
+        type: Date
+    },
+    address: {
+        type: String,
+        default: ""
+    },
+    
+    qualification: {
+        type: String,
+        default: ""
+    },
+    designation: {
+        type: String,
+        default: ""
+    },
 
-  googleId: String,
-  qualification: String,
-  designation: String,
-  dob: String, 
-  gender: {
-  type: String,
-  },
+    fcm_token: {
+        type: String,
+        default: ""
+    },
 
-  email: {
-    type: String,
-    unique: false
-  },
+    walletBalance: {
+        type: Number,
+        default: 0
+    },
 
-  phone: {
-    type: String,
-  },
+}, { timestamps: true });
 
-  password: {
-    type: String,
-    // required: true,
-  },
-  address: String,
-  city:String,
-  state:String,
-  country:String,
-  pincode:Number,
-  role: {
-    type: String,
-    default: 'user',
-  },
 
-  wallet: {
-    type: Number,
-    default: 0, 
-  },
 
-  profilePic: {
-    type: String, 
-    default: '',
-  },
-
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
-
-userSchema.pre('save', function (next) {
-  this.updatedAt = Date.now();
-  next();
-});
-
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);

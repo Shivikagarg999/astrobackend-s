@@ -6,7 +6,6 @@ const expertSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    
     phone: {
         type: String,
         default: null,

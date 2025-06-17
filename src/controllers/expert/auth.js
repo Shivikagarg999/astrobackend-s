@@ -94,7 +94,6 @@ exports.register = (req, res) => {
         { name: 'verificationVideo' }
     ]);
 
-
     multiple(req, res, async (err) => {
         try {
             // If file upload error occurs, use the error handler
