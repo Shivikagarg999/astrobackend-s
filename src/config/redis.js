@@ -1,7 +1,7 @@
 const redisLib = require('redis');
 
 const redis = redisLib.createClient({
-    url: 'redis://localhost:6379'
+    url: 'rediss://default:4bff1d68aa60487d8b3aa6cbaacce095@gusc1-quiet-pegasus-31879.upstash.io:31879'
 });
 
 let isConnected = false;

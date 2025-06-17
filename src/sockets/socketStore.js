@@ -16,7 +16,6 @@ exports.getSocketio = () => io;
 
 // Add an online user (no expiry)
 exports.addOnlineUser = async (userId, socketId) => {
-
     await setRedis(`${ONLINE_USER_PREFIX}${userId}`, socketId);
 };
 
@@ -31,7 +30,6 @@ exports.getOnlineUserSocketId = async (userId) => {
 };
 
 // socketStore.js
-
 exports.getAllOnlineUsers = async () => {
     const keys = await redis.keys(`${ONLINE_USER_PREFIX}*`);
     const userIds = keys.map(key => key.replace(ONLINE_USER_PREFIX, ''));
@@ -50,7 +48,6 @@ exports.getAllOnlineUsers = async () => {
     }
     return confirmedOnlineUsers;
 };
-
 
 // Get socketId by userId
 exports.getSocketId = async (userId) => {
@@ -76,4 +73,3 @@ exports.getSocket = async (userId) => {
     const socket = io?.sockets?.sockets?.get(socketId);
     return socket;
 };
-

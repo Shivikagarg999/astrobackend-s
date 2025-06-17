@@ -214,5 +214,3 @@ exports.editProfile = (req, res) => {
         }
     });
 };
-
-
